@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    color-scheme: dark;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--bg-base);
+    color: var(--tx-primary);
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 99px;
+  }
+
+  *:hover::-webkit-scrollbar-thumb {
+    background: var(--ui-12);
+  }
+
+  ::selection {
+    background: var(--amber-a25);
+  }
+}
+
+/* ── Nasus Default token block ── */
+:root {
+  /* Amber accent */
+  --amber:        oklch(64% 0.214 40.1);
+  --amber-deep:   oklch(44% 0.154 10.1);
+  --amber-mid:    oklch(54% 0.173 20.1);
+  --amber-soft:   oklch(79% 0.164 30.1);
+  --amber-light:  oklch(89% 0.135 55.1);
+  --amber-pale:   oklch(99% 0.116 70.1);
+
+  /* Amber alpha variants */
+  --amber-a08: color-mix(in srgb, var(--amber) 8%, transparent);
+  --amber-a12: color-mix(in srgb, var(--amber) 12%, transparent);
+  --amber-a15: color-mix(in srgb, var(--amber) 15%, transparent);
+  --amber-a20: color-mix(in srgb, var(--amber) 20%, transparent);
+  --amber-a25: color-mix(in srgb, var(--amber) 25%, transparent);
+  --amber-a30: color-mix(in srgb, var(--amber) 30%, transparent);
+  --amber-a40: color-mix(in srgb, var(--amber) 40%, transparent);
+
+  /* Nasus Default bg surface ramp */
+  --bg-base:     #090909;
+  --bg-deep:     #050505;
+  --bg-surface:  #0c0c0c;
+  --bg-code:     #080808;
+  --bg-elevated: #111111;
+  --bg-subtle:   #181818;
+  --bg-overlay:  rgba(0,0,0,0.55);
+
+  /* Text hierarchy */
+  --tx-primary:   #e8e8e8;
+  --tx-secondary: #b0b0b0;
+  --tx-tertiary:  #787878;
+  --tx-muted:     #585858;
+  --tx-dim:       #464646;
+  --tx-ghost:     #3c3c3c;
+
+  /* Glass tokens */
+  --glass-bg:     rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.07);
+
+  /* UI tint ramp */
+  --ui-04:  rgba(255,255,255,0.04);
+  --ui-05:  rgba(255,255,255,0.05);
+  --ui-06:  rgba(255,255,255,0.06);
+  --ui-07:  rgba(255,255,255,0.07);
+  --ui-08:  rgba(255,255,255,0.08);
+  --ui-10:  rgba(255,255,255,0.10);
+  --ui-12:  rgba(255,255,255,0.12);
+
+  /* Mesh gradient */
+  --mesh-gradient: radial-gradient(at 0% 0%, oklch(25% 0.1 260 / 0.18) 0px, transparent 50%),
+                   radial-gradient(at 100% 100%, oklch(64% 0.214 40.1 / 0.10) 0px, transparent 50%);
+
+  /* Typography */
+  --font-display: 'Unbounded', sans-serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Nasus amber accent (rgba fallbacks for nasus-default) */
+  --amber-a04: rgba(234, 179, 8, 0.04);
+  --amber-a05: rgba(234, 179, 8, 0.05);
+  --amber-a06: rgba(234, 179, 8, 0.06);
+  --amber-a07: rgba(234, 179, 8, 0.07);
+  --amber-a09: rgba(234, 179, 8, 0.09);
+  --amber-a10: rgba(234, 179, 8, 0.10);
+  --amber-a13: rgba(234, 179, 8, 0.13);
+  --amber-a14: rgba(234, 179, 8, 0.14);
+  --amber-a16: rgba(234, 179, 8, 0.16);
+  --amber-a18: rgba(234, 179, 8, 0.18);
+  --amber-a22: rgba(234, 179, 8, 0.22);
+  --amber-a35: rgba(234, 179, 8, 0.35);
+  --amber-a38: rgba(234, 179, 8, 0.38);
+  --amber-a45: rgba(234, 179, 8, 0.45);
+  --amber-a50: rgba(234, 179, 8, 0.50);
+  --amber-a55: rgba(234, 179, 8, 0.55);
+  --amber-a60: rgba(234, 179, 8, 0.60);
+  --amber-a70: rgba(234, 179, 8, 0.70);
+  --amber-a80: rgba(234, 179, 8, 0.80);
+}
+
+@layer utilities {
+  .border-col {
+    border-color: var(--glass-border);
+  }
+
+  .text-primary {
+    color: var(--tx-primary);
+  }
+
+  .text-muted {
+    color: var(--tx-tertiary);
+  }
+
+  .text-dim {
+    color: var(--tx-muted);
+  }
+
+  .bg-card {
+    background-color: var(--bg-elevated);
+  }
+
+  .bg-surface {
+    background-color: var(--bg-subtle);
+  }
+
+  .shadow-card {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  }
+
+  .shadow-modal {
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+}
