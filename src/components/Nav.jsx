@@ -13,8 +13,8 @@ export default function Nav() {
       {/* Wordmark with logo */}
       <a href="#" className="flex items-center gap-2 no-underline" style={{ textDecoration: 'none' }}>
         <img
-          src="/archivist-logo.svg"
-          alt="Archivist"
+          src="/archeo-logo.svg"
+          alt="Archeo"
           style={{ width: 20, height: 20, display: 'block' }}
         />
         <span style={{
@@ -24,7 +24,7 @@ export default function Nav() {
           letterSpacing: '-0.01em',
           fontFamily: 'var(--font-display)',
         }}>
-          archivist<span style={{ color: 'var(--amber)' }}>.dev</span>
+          archeo<span style={{ color: 'var(--amber)' }}>.dev</span>
         </span>
       </a>
 

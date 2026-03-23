@@ -10,9 +10,9 @@ export default function Footer() {
         padding: '0 24px',
       }}
     >
-      <span style={{ fontSize: 12, color: 'var(--tx-muted)', letterSpacing: '-0.01em', fontFamily: 'var(--font-mono)' }}>archivist.dev</span>
+      <span style={{ fontSize: 12, color: 'var(--tx-muted)', letterSpacing: '-0.01em', fontFamily: 'var(--font-mono)' }}>archeo.dev</span>
       <a
-        href="mailto:hello@archivist.dev"
+        href="mailto:hello@archeo.dev"
         style={{
           fontSize: 12,
           color: 'var(--tx-muted)',
@@ -24,7 +24,7 @@ export default function Footer() {
         onMouseEnter={e => e.currentTarget.style.color = 'var(--tx-tertiary)'}
         onMouseLeave={e => e.currentTarget.style.color = 'var(--tx-muted)'}
       >
-        hello@archivist.dev
+        hello@archeo.dev
       </a>
     </footer>
   )

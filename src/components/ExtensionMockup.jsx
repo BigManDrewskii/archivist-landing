@@ -51,14 +51,14 @@ export default function ExtensionMockup() {
         }}
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: 7 }}>
-          {/* Archivist logo */}
+          {/* Archeo logo */}
           <img
-            src="/archivist-logo.svg"
-            alt="Archivist"
+            src="/archeo-logo.svg"
+            alt="Archeo"
             style={{ width: 16, height: 16, display: 'block' }}
           />
           <span style={{ fontSize: 13, fontWeight: 600, color: 'var(--tx-primary)', letterSpacing: '-0.01em', fontFamily: 'var(--font-display)' }}>
-            archivist<span style={{ color: 'var(--amber)' }}>.dev</span>
+            archeo<span style={{ color: 'var(--amber)' }}>.dev</span>
           </span>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>

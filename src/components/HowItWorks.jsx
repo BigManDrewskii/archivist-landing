@@ -7,7 +7,7 @@ const steps = [
   {
     num: '02',
     title: 'Archive',
-    desc: 'Click the icon. Archivist fetches every asset on the page — CSS, fonts, images, scripts, lazy-loaded content, shadow DOM — and saves it locally.',
+    desc: 'Click the icon. Archeo fetches every asset on the page — CSS, fonts, images, scripts, lazy-loaded content, shadow DOM — and saves it locally.',
   },
   {
     num: '03',

@@ -56,7 +56,7 @@ export default function FooterCTA() {
           onMouseEnter={e => e.currentTarget.style.opacity = '0.85'}
           onMouseLeave={e => e.currentTarget.style.opacity = '1'}
         >
-          Get Archivist → from $9
+          Get Archeo → from $9
         </a>
 
         <p style={{ fontSize: 11, color: 'var(--tx-muted)', letterSpacing: '-0.005em', fontFamily: 'var(--font-sans)' }}>
