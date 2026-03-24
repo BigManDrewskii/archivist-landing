@@ -171,14 +171,101 @@
   }
 }
 
-/* Tablet adaptations */
-@media (min-width: 601px) and (max-width: 1023px) {
+/* Tablet adaptations (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Hero: maintain 2-column but optimize spacing */
   .hero-grid {
     gap: 32px;
+    grid-template-columns: 1fr 1fr;
   }
 
+  /* Nav: wider padding for tablet */
   .nav-float {
     width: calc(100% - 32px) !important;
+    padding: 0 12px !important;
+  }
+
+  /* Card grids: 2 columns instead of 3 */
+  .feature-cards,
+  .format-cards {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* HowItWorks: keep 2 columns on tablet */
+  .how-it-works-cards {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Section padding: balanced for tablet */
+  section[style*="paddingTop: 80"] {
+    padding-top: 64px !important;
+    padding-bottom: 64px !important;
+  }
+
+  /* Video: maintain aspect ratio but adjust max-width */
+  .video-container {
+    maxWidth: 85% !important;
+  }
+}
+
+/* Small tablet/portrait tablet (601px - 767px) */
+@media (min-width: 601px) and (max-width: 767px) {
+  /* Hero: maintain 2-column with tighter spacing */
+  .hero-grid {
+    gap: 24px;
+  }
+
+  /* Nav: compact for small tablets */
+  .nav-float {
+    width: calc(100% - 24px) !important;
+  }
+
+  /* Card grids: 2 columns with minimum width */
+  .feature-cards,
+  .format-cards {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)) !important;
+  }
+
+  /* HowItWorks: 2 columns but can stack if needed */
+  .how-it-works-cards {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
+  }
+}
+
+/* Landscape tablet optimizations */
+@media (min-width: 768px) and (max-width: 1023px) and (orientation: landscape) {
+  /* Reduce vertical padding in landscape */
+  section[style*="paddingTop: 80"] {
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
+  }
+
+  /* Hero: can use more horizontal space */
+  .hero-grid {
+    gap: 40px;
+  }
+}
+
+/* Tablet touch optimizations (hover still works, but ensure touch targets) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Ensure buttons work for both touch and pointer */
+  a[style*="height"],
+  button[style*="height"] {
+    min-height: 44px !important;
+  }
+
+  /* Increase tap targets on cards */
+  .feature-cards > div,
+  .format-cards > div,
+  .how-it-works-cards > div {
+    padding: 20px !important;
+  }
+
+  /* Better spacing for touch */
+  .feature-cards,
+  .format-cards,
+  .how-it-works-cards {
+    gap: 16px !important;
   }
 }
 

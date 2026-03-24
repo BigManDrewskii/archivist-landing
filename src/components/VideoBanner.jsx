@@ -68,6 +68,7 @@ export default function VideoBanner() {
 
         {/* Video frame */}
         <div
+          className="video-container"
           style={{
             position: 'relative',
             width: '100%',
