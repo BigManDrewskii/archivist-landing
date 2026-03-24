@@ -438,8 +438,8 @@ export default function ExtensionMockup() {
           style={{
             display: 'flex',
             flexDirection: 'column',
-            gap: 10,
-            marginTop: 20,
+            gap: 12,
+            marginTop: 32,
           }}
         >
           {/* Primary CTA */}
@@ -451,7 +451,7 @@ export default function ExtensionMockup() {
               justifyContent: 'center',
               gap: 8,
               width: '100%',
-              height: 46,
+              height: 48,
               background: 'var(--amber)',
               border: '1px solid var(--amber)',
               borderRadius: 6,
@@ -466,7 +466,7 @@ export default function ExtensionMockup() {
             }}
           >
             <i className="hn hn-download" style={{ fontSize: 17 }} />
-            Archive Page
+            Download Archive
           </button>
 
           {/* Design system export */}
@@ -478,8 +478,9 @@ export default function ExtensionMockup() {
               justifyContent: 'center',
               gap: 8,
               width: '100%',
-              height: 46,
-              background: 'rgba(17,17,17,0.6)',
+              height: 48,
+              padding: '0 16px',
+              background: 'var(--bg-elevated, #171717)',
               border: '1px solid var(--amber)',
               borderRadius: 6,
               color: 'var(--amber)',
@@ -495,80 +496,6 @@ export default function ExtensionMockup() {
             <i className="hn hn-code-block" style={{ fontSize: 17 }} />
             Extract Design System
           </button>
-
-          {/* Divider */}
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: 8,
-              fontSize: 11,
-              fontWeight: 600,
-              textTransform: 'uppercase',
-              letterSpacing: '0.07em',
-              color: 'var(--tx-dim)',
-            }}
-          >
-            <div
-              style={{
-                flex: 1,
-                height: 1,
-                background: 'var(--glass-border)',
-              }}
-            />
-            or scan first
-            <div
-              style={{
-                flex: 1,
-                height: 1,
-                background: 'var(--glass-border)',
-              }}
-            />
-          </div>
-
-          {/* Scan + Download row */}
-          <div style={{ display: 'flex', gap: 6 }}>
-            <div
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: 6,
-                padding: '0 16px',
-                height: 42,
-                background: 'var(--glass-bg)',
-                border: '1px solid var(--glass-border)',
-                borderRadius: 6,
-                color: 'var(--tx-tertiary)',
-                fontSize: 13,
-                fontWeight: 500,
-                whiteSpace: 'nowrap',
-                flexShrink: 0,
-              }}
-            >
-              <i className="hn hn-search" style={{ fontSize: 15 }} />
-              Scan
-            </div>
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                gap: 6,
-                flex: 1,
-                height: 42,
-                background: 'var(--glass-bg)',
-                border: '1px solid var(--glass-border)',
-                borderRadius: 6,
-                color: 'var(--tx-tertiary)',
-                fontSize: 13,
-                fontWeight: 500,
-                opacity: 0.25,
-              }}
-            >
-              <i className="hn hn-download" style={{ fontSize: 15 }} />
-              Scan first
-            </div>
-          </div>
         </div>
       </div>
     </div>
