@@ -1,55 +1,149 @@
+import { useState, useEffect } from 'react'
+
+const GUMROAD_URL = 'https://nasus1.gumroad.com/l/mvaelh'
+
+const navLinks = [
+  { label: 'How it works', href: '#how-it-works' },
+  { label: 'What it captures', href: '#what-it-captures' },
+  { label: 'Formats', href: '#formats' },
+]
+
 export default function Nav() {
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
   return (
     <nav
-      className="sticky top-0 z-50 flex items-center justify-between px-6 md:px-10"
+      className="nav-float"
       style={{
-        height: 52,
-        borderBottom: '1px solid var(--glass-border)',
-        background: 'rgba(9,9,9,0.92)',
-        backdropFilter: 'blur(12px)',
-        WebkitBackdropFilter: 'blur(12px)',
+        position: 'fixed',
+        top: 16,
+        left: '50%',
+        transform: 'translateX(-50%)',
+        zIndex: 50,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        maxWidth: 720,
+        width: 'calc(100% - 24px)',
+        height: 48,
+        padding: '0 6px 0 20px',
+        background: scrolled
+          ? 'rgba(9, 9, 9, 0.92)'
+          : 'rgba(9, 9, 9, 0.78)',
+        backdropFilter: 'blur(24px) saturate(1.4)',
+        WebkitBackdropFilter: 'blur(24px) saturate(1.4)',
+        border: '1px solid var(--nav-border)',
+        borderRadius: 999,
+        boxShadow: scrolled
+          ? '0 2px 20px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.03)'
+          : '0 4px 30px rgba(0,0,0,0.35), 0 0 0 1px rgba(255,255,255,0.03)',
+        transition: 'background 0.3s ease-out, box-shadow 0.3s ease-out',
       }}
     >
-      {/* Wordmark with logo */}
-      <a href="#" className="flex items-center gap-2 no-underline" style={{ textDecoration: 'none' }}>
+      {/* Logo */}
+      <a
+        href="/"
+        className="nav-logo"
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: 8,
+          textDecoration: 'none',
+          flexShrink: 0,
+        }}
+      >
         <img
           src="/archeo-logo.svg"
           alt="Archeo"
-          style={{ width: 20, height: 20, display: 'block' }}
+          style={{ width: 18, height: 18, display: 'block' }}
         />
-        <span style={{
-          fontSize: 14,
-          fontWeight: 600,
-          color: 'var(--tx-primary)',
-          letterSpacing: '-0.01em',
-          fontFamily: 'var(--font-display)',
-        }}>
-          archeo<span style={{ color: 'var(--amber)' }}>.dev</span>
+        <span
+          style={{
+            fontSize: 13,
+            fontWeight: 600,
+            color: 'var(--tx-primary)',
+            letterSpacing: '-0.01em',
+            fontFamily: 'var(--font-display)',
+            whiteSpace: 'nowrap',
+          }}
+        >
+          archeo
+          <span style={{ color: 'var(--amber)' }}>.dev</span>
         </span>
       </a>
 
+      {/* Center links */}
+      <div className="nav-links" style={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+        {navLinks.map((link) => (
+          <a
+            key={link.href}
+            href={link.href}
+            className="nav-link"
+            style={{
+              padding: '6px 14px',
+              fontSize: 12,
+              fontWeight: 500,
+              color: 'var(--tx-tertiary)',
+              textDecoration: 'none',
+              borderRadius: 999,
+              letterSpacing: '-0.01em',
+              fontFamily: 'var(--font-sans)',
+              transition: 'color 0.15s ease-out, background 0.15s ease-out',
+              whiteSpace: 'nowrap',
+            }}
+            onMouseEnter={e => {
+              e.currentTarget.style.color = 'var(--tx-primary)'
+              e.currentTarget.style.background = 'var(--ui-06)'
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.color = 'var(--tx-tertiary)'
+              e.currentTarget.style.background = 'transparent'
+            }}
+          >
+            {link.label}
+          </a>
+        ))}
+      </div>
+
       {/* CTA */}
       <a
-        href="https://nasus1.gumroad.com/l/mvaelh"
+        href={GUMROAD_URL}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center"
+        className="nav-cta"
         style={{
+          display: 'inline-flex',
+          alignItems: 'center',
+          height: 34,
+          padding: '0 16px',
           background: 'var(--amber)',
           color: '#000',
           fontSize: 12,
           fontWeight: 600,
-          padding: '0 14px',
-          height: 32,
-          borderRadius: 6,
+          borderRadius: 999,
           border: 'none',
           textDecoration: 'none',
           letterSpacing: '-0.01em',
-          transition: 'opacity 0.15s',
           fontFamily: 'var(--font-sans)',
+          transition: 'opacity 0.15s ease-out, transform 0.15s ease-out',
+          whiteSpace: 'nowrap',
+          flexShrink: 0,
         }}
-        onMouseEnter={e => e.currentTarget.style.opacity = '0.85'}
-        onMouseLeave={e => e.currentTarget.style.opacity = '1'}
+        onMouseEnter={e => {
+          e.currentTarget.style.opacity = '0.88'
+          e.currentTarget.style.transform = 'scale(0.97)'
+        }}
+        onMouseLeave={e => {
+          e.currentTarget.style.opacity = '1'
+          e.currentTarget.style.transform = 'scale(1)'
+        }}
       >
         Get it — from $9
       </a>

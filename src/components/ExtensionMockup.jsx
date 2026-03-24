@@ -1,198 +1,575 @@
-// Pixel-accurate extension popup mockup
-
-function ToggleItem({ label, checked }) {
-  return (
-    <div className="flex items-center gap-2">
-      <div
-        style={{
-          width: 14,
-          height: 14,
-          borderRadius: 3,
-          border: checked ? 'none' : '1px solid var(--ui-08)',
-          background: checked ? 'var(--amber)' : 'transparent',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          flexShrink: 0,
-        }}
-      >
-        {checked && (
-          <svg width="9" height="7" viewBox="0 0 9 7" fill="none">
-            <path d="M1 3.5L3.5 6L8 1" stroke="#000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        )}
-      </div>
-      <span style={{ fontSize: 11, color: checked ? 'var(--tx-primary)' : 'var(--tx-muted)', letterSpacing: '-0.01em', fontFamily: 'var(--font-sans)' }}>{label}</span>
-    </div>
-  )
-}
+// Pixel-accurate recreation of the Archeo.dev Chrome extension popup
+// Matches /Users/drewskii/Desktop/archeo/popup.html + popup.css exactly
 
 export default function ExtensionMockup() {
   return (
     <div
       style={{
-        background: 'var(--bg-elevated)',
-        border: '1px solid var(--glass-border)',
+        width: 380,
+        background: 'rgba(9,9,9,0.75)',
+        backdropFilter: 'blur(16px) saturate(1.2)',
+        WebkitBackdropFilter: 'blur(16px) saturate(1.2)',
         borderRadius: 10,
-        boxShadow: '0 4px 32px rgba(0,0,0,0.6), 0 0 0 1px var(--amber-a07)',
-        width: 320,
+        border: '1px solid var(--glass-border)',
+        boxShadow:
+          '0 8px 40px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.03)',
         overflow: 'hidden',
         fontFamily: 'var(--font-sans)',
+        fontSize: 14,
+        color: 'var(--tx-secondary)',
+        letterSpacing: '-0.01em',
+        userSelect: 'none',
       }}
     >
-      {/* Header */}
+      {/* ── Header ─────────────────────────────── */}
       <div
         style={{
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          padding: '12px 14px',
+          height: 52,
+          padding: '0 16px',
+          background: 'rgba(5,5,5,0.7)',
           borderBottom: '1px solid var(--glass-border)',
         }}
       >
-        <div style={{ display: 'flex', alignItems: 'center', gap: 7 }}>
-          {/* Archeo logo */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
           <img
             src="/archeo-logo.svg"
             alt="Archeo"
-            style={{ width: 16, height: 16, display: 'block' }}
+            style={{ width: 24, height: 24, display: 'block' }}
           />
-          <span style={{ fontSize: 13, fontWeight: 600, color: 'var(--tx-primary)', letterSpacing: '-0.01em', fontFamily: 'var(--font-display)' }}>
-            archeo<span style={{ color: 'var(--amber)' }}>.dev</span>
+          <span
+            style={{
+              fontFamily: 'var(--font-display)',
+              fontSize: 14,
+              fontWeight: 600,
+              color: 'var(--tx-primary)',
+              letterSpacing: '-0.01em',
+            }}
+          >
+            archeo
+          </span>
+          <span
+            style={{
+              fontFamily: 'var(--font-display)',
+              fontSize: 14,
+              fontWeight: 600,
+              color: 'var(--amber)',
+              letterSpacing: '-0.01em',
+            }}
+          >
+            .dev
           </span>
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-          {/* Clock icon */}
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-            <circle cx="7" cy="7" r="5.5" stroke="var(--tx-muted)" strokeWidth="1.1" />
-            <path d="M7 4.5V7l1.5 1.5" stroke="var(--tx-muted)" strokeWidth="1.1" strokeLinecap="round" />
-          </svg>
-          {/* Gear icon */}
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-            <circle cx="7" cy="7" r="2" stroke="var(--tx-muted)" strokeWidth="1.1" />
-            <path d="M7 1.5v1M7 11.5v1M1.5 7h1M11.5 7h1M3.1 3.1l.7.7M10.2 10.2l.7.7M3.1 10.9l.7-.7M10.2 3.8l.7-.7" stroke="var(--tx-muted)" strokeWidth="1.1" strokeLinecap="round" />
-          </svg>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 3 }}>
+          <div
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: 34,
+              height: 34,
+              background: 'transparent',
+              border: '1px solid transparent',
+              borderRadius: 4,
+              color: 'var(--tx-tertiary)',
+            }}
+          >
+            <i className="hn hn-clock" style={{ fontSize: 16 }} />
+          </div>
+          <div
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: 34,
+              height: 34,
+              background: 'transparent',
+              border: '1px solid transparent',
+              borderRadius: 4,
+              color: 'var(--tx-tertiary)',
+            }}
+          >
+            <i className="hn hn-cog" style={{ fontSize: 16 }} />
+          </div>
         </div>
       </div>
 
-      {/* Context strip */}
+      {/* ── Context Strip ──────────────────────── */}
       <div
         style={{
           display: 'flex',
           alignItems: 'center',
-          gap: 8,
-          padding: '8px 14px',
+          gap: 12,
+          padding: '12px 16px',
+          background: 'rgba(12,12,12,0.6)',
           borderBottom: '1px solid var(--glass-border)',
+          minHeight: 56,
         }}
       >
-        {/* Globe */}
-        <svg width="13" height="13" viewBox="0 0 13 13" fill="none" style={{ flexShrink: 0 }}>
-          <circle cx="6.5" cy="6.5" r="5.2" stroke="var(--tx-muted)" strokeWidth="1.1" />
-          <ellipse cx="6.5" cy="6.5" rx="2.4" ry="5.2" stroke="var(--tx-muted)" strokeWidth="1.1" />
-          <path d="M1.5 6.5h10" stroke="var(--tx-muted)" strokeWidth="1.1" />
-        </svg>
-        <span style={{ fontSize: 11, color: 'var(--tx-tertiary)', flex: 1, letterSpacing: '-0.01em', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-          example.com/article
-        </span>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 5, flexShrink: 0 }}>
-          <span style={{
-            fontSize: 10,
-            color: '#4ade80',
-            background: 'rgba(74,222,128,0.08)',
-            padding: '2px 6px',
-            borderRadius: 3,
-            fontWeight: 500,
-            letterSpacing: '-0.01em',
-          }}>https</span>
-          <span style={{
-            fontSize: 10,
-            color: 'var(--amber)',
-            background: 'var(--amber-a08)',
-            padding: '2px 6px',
-            borderRadius: 3,
-            fontWeight: 500,
-            letterSpacing: '-0.01em',
-          }}>34 assets</span>
-        </div>
-      </div>
-
-      {/* Format row */}
-      <div
-        style={{
-          display: 'flex',
-          gap: 6,
-          padding: '10px 14px',
-          borderBottom: '1px solid var(--glass-border)',
-        }}
-      >
-        {[
-          { label: 'ZIP Archive', active: true },
-          { label: 'Single HTML', active: false },
-          { label: 'MHTML', active: false },
-        ].map(({ label, active }) => (
-          <div
-            key={label}
-            style={{
-              fontSize: 11,
-              fontWeight: active ? 600 : 400,
-              color: active ? 'var(--amber)' : 'var(--tx-tertiary)',
-              background: active ? 'var(--amber-a10)' : 'var(--bg-subtle)',
-              border: active ? '1px solid var(--amber-a20)' : '1px solid var(--glass-border)',
-              padding: '4px 9px',
-              borderRadius: 4,
-              cursor: 'default',
-              letterSpacing: '-0.01em',
-              userSelect: 'none',
-            }}
-          >
-            {label}
-          </div>
-        ))}
-      </div>
-
-      {/* Asset toggles */}
-      <div style={{ padding: '10px 14px', borderBottom: '1px solid var(--glass-border)' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '7px 0' }}>
-          <ToggleItem label="CSS" checked={true} />
-          <ToggleItem label="JS" checked={true} />
-          <ToggleItem label="Images" checked={true} />
-          <ToggleItem label="Fonts" checked={true} />
-          <ToggleItem label="Video/Audio" checked={false} />
-          <ToggleItem label="Docs" checked={false} />
-        </div>
-      </div>
-
-      {/* Archive button */}
-      <div style={{ padding: '10px 14px 0 14px' }}>
-        <button
+        {/* Globe favicon fallback */}
+        <div
           style={{
-            width: '100%',
-            height: 36,
-            background: 'var(--amber)',
-            color: '#000',
-            fontSize: 13,
-            fontWeight: 600,
-            border: 'none',
-            borderRadius: 6,
-            cursor: 'default',
-            letterSpacing: '-0.01em',
-            fontFamily: 'var(--font-sans)',
+            position: 'relative',
+            width: 20,
+            height: 20,
+            flexShrink: 0,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            color: 'var(--tx-dim)',
           }}
         >
-          Archive Page
-        </button>
+          <i className="hn hn-globe" style={{ fontSize: 15 }} />
+        </div>
+
+        <div style={{ flex: 1, minWidth: 0 }}>
+          <div
+            style={{
+              fontSize: 13,
+              fontWeight: 500,
+              color: 'var(--tx-primary)',
+              whiteSpace: 'nowrap',
+              overflow: 'hidden',
+              textOverflow: 'ellipsis',
+            }}
+          >
+            Google Fonts
+          </div>
+          <div
+            style={{
+              fontFamily: 'var(--font-mono)',
+              fontSize: 11,
+              color: 'var(--tx-tertiary)',
+              whiteSpace: 'nowrap',
+              overflow: 'hidden',
+              textOverflow: 'ellipsis',
+              marginTop: 2,
+            }}
+          >
+            fonts.google.com
+          </div>
+        </div>
+
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'flex-end',
+            gap: 3,
+            flexShrink: 0,
+          }}
+        >
+          <span
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: 2,
+              fontFamily: 'var(--font-mono)',
+              fontSize: 11,
+              fontWeight: 500,
+              padding: '2px 6px',
+              border: '1px solid var(--green-a22, rgba(34,197,94,0.22))',
+              borderRadius: 4,
+              color: 'var(--green, #22c55e)',
+              background: 'var(--green-a08, rgba(34,197,94,0.08))',
+              textTransform: 'uppercase',
+              letterSpacing: '0.04em',
+            }}
+          >
+            https
+          </span>
+          <span
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: 2,
+              fontFamily: 'var(--font-mono)',
+              fontSize: 11,
+              fontWeight: 500,
+              padding: '2px 6px',
+              border: '1px solid var(--glass-border)',
+              borderRadius: 4,
+              color: 'var(--tx-tertiary)',
+              background: 'var(--glass-bg)',
+              textTransform: 'uppercase',
+              letterSpacing: '0.04em',
+            }}
+          >
+            34{' '}
+            <span style={{ opacity: 0.55 }}>assets</span>
+          </span>
+        </div>
       </div>
 
-      {/* Footer line */}
-      <div style={{
-        padding: '7px 14px 12px',
-        fontSize: 11,
-        color: 'var(--tx-muted)',
-        letterSpacing: '-0.01em',
-        textAlign: 'center',
-        fontFamily: 'var(--font-mono)',
-      }}>
-        34 files · ~4.2 MB est.
+      {/* ── Main Panel ────────────────────────── */}
+      <div style={{ padding: '20px 16px', display: 'flex', flexDirection: 'column' }}>
+        {/* Section Label: Output Format */}
+        <div
+          style={{
+            fontSize: 11,
+            fontWeight: 600,
+            textTransform: 'uppercase',
+            letterSpacing: '0.08em',
+            color: 'var(--tx-muted)',
+            paddingBottom: 6,
+            borderBottom: '1px solid var(--glass-border)',
+            marginBottom: 10,
+          }}
+        >
+          Output Format
+        </div>
+
+        {/* Format pills */}
+        <div style={{ display: 'flex', gap: 4, marginBottom: 12 }}>
+          {[
+            { icon: 'hn-download-alt', label: 'ZIP Archive', active: true },
+            { icon: 'hn-code', label: 'Single HTML', active: false },
+            { icon: 'hn-file-import', label: 'MHTML', active: false },
+          ].map(({ icon, label, active }) => (
+            <div
+              key={label}
+              style={{
+                flex: 1,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: 4,
+                padding: '10px 6px',
+                background: active ? 'var(--amber-a12)' : 'var(--glass-bg)',
+                border: `1px solid ${active ? 'var(--amber-a30)' : 'var(--glass-border)'}`,
+                borderRadius: 6,
+                color: active ? 'var(--amber-soft, oklch(79% 0.164 30.1))' : 'var(--tx-muted)',
+                fontSize: 12,
+                fontWeight: 500,
+                whiteSpace: 'nowrap',
+                boxShadow: active ? '0 0 0 1px var(--amber-a12)' : 'none',
+              }}
+            >
+              <i className={`hn ${icon}`} style={{ fontSize: 15 }} />
+              {label}
+            </div>
+          ))}
+        </div>
+
+        {/* Section Label: Assets */}
+        <div
+          style={{
+            fontSize: 11,
+            fontWeight: 600,
+            textTransform: 'uppercase',
+            letterSpacing: '0.08em',
+            color: 'var(--tx-muted)',
+            paddingBottom: 6,
+            borderBottom: '1px solid var(--glass-border)',
+            marginBottom: 10,
+            marginTop: 20,
+          }}
+        >
+          Assets
+        </div>
+
+        {/* Asset toggle pills */}
+        <div
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: 4,
+            marginBottom: 6,
+          }}
+        >
+          {[
+            { label: 'CSS', checked: true },
+            { label: 'JS', checked: true },
+            { label: 'Images', checked: true },
+            { label: 'Fonts', checked: true },
+            { label: 'Video/Audio', checked: false },
+            { label: 'Docs', checked: false },
+          ].map(({ label, checked }) => (
+            <div
+              key={label}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                padding: '4px 10px',
+                background: checked ? 'var(--amber-a12)' : 'var(--glass-bg)',
+                border: `1px solid ${checked ? 'var(--amber-a30)' : 'var(--glass-border)'}`,
+                borderRadius: 4,
+                color: checked
+                  ? 'var(--amber-soft, oklch(79% 0.164 30.1))'
+                  : 'var(--tx-muted)',
+                fontSize: 12,
+                fontWeight: 500,
+                boxShadow: checked ? '0 0 0 1px var(--amber-a12)' : 'none',
+              }}
+            >
+              {label}
+            </div>
+          ))}
+        </div>
+
+        {/* Advanced Options toggle */}
+        <div style={{ padding: '8px 0 4px' }}>
+          <div
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: 4,
+              fontSize: 11,
+              fontWeight: 600,
+              textTransform: 'uppercase',
+              letterSpacing: '0.07em',
+              color: 'var(--tx-muted)',
+            }}
+          >
+            <i
+              className="hn hn-arrow-right"
+              style={{ fontSize: 12, color: 'var(--tx-dim)' }}
+            />
+            Advanced Options
+          </div>
+        </div>
+
+        {/* Stats bar */}
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'stretch',
+            margin: '12px 0 0',
+            border: '1px solid var(--glass-border)',
+            borderRadius: 6,
+            background: 'rgba(12,12,12,0.5)',
+            overflow: 'hidden',
+          }}
+        >
+          {[
+            { icon: 'hn-paragraph', val: '12', label: 'css' },
+            { icon: 'hn-code', val: '8', label: 'js' },
+            { icon: 'hn-image', val: '47', label: 'img' },
+            { icon: 'hn-text', val: '3', label: 'fonts' },
+          ].map(({ icon, val, label }) => (
+            <div
+              key={label}
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: 2,
+                flex: 1,
+                padding: '10px 4px',
+                borderRight: '1px solid var(--glass-border)',
+              }}
+            >
+              <i
+                className={`hn ${icon}`}
+                style={{ fontSize: 14, color: 'var(--tx-dim)', lineHeight: 1 }}
+              />
+              <span
+                style={{
+                  fontFamily: 'var(--font-mono)',
+                  fontSize: 14,
+                  fontWeight: 600,
+                  color: 'var(--tx-primary)',
+                  lineHeight: 1,
+                }}
+              >
+                {val}
+              </span>
+              <small
+                style={{
+                  fontFamily: 'var(--font-mono)',
+                  fontSize: 11,
+                  color: 'var(--tx-tertiary)',
+                }}
+              >
+                {label}
+              </small>
+            </div>
+          ))}
+          <div
+            style={{
+              width: 1,
+              background: 'var(--glass-border)',
+              flexShrink: 0,
+            }}
+          />
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: 2,
+              flex: 1,
+              padding: '10px 4px',
+            }}
+          >
+            <i
+              className="hn hn-box-usd"
+              style={{ fontSize: 14, color: 'var(--tx-dim)', lineHeight: 1 }}
+            />
+            <span
+              style={{
+                fontFamily: 'var(--font-mono)',
+                fontSize: 14,
+                fontWeight: 600,
+                color: 'var(--amber)',
+                lineHeight: 1,
+              }}
+            >
+              ~4.2 MB
+            </span>
+            <small
+              style={{
+                fontFamily: 'var(--font-mono)',
+                fontSize: 11,
+                color: 'var(--tx-tertiary)',
+              }}
+            >
+              est.
+            </small>
+          </div>
+        </div>
+
+        {/* ── Action Buttons ─────────────────────── */}
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 10,
+            marginTop: 20,
+          }}
+        >
+          {/* Primary CTA */}
+          <button
+            type="button"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: 8,
+              width: '100%',
+              height: 46,
+              background: 'var(--amber)',
+              border: '1px solid var(--amber)',
+              borderRadius: 6,
+              color: '#000',
+              fontFamily: 'var(--font-sans)',
+              fontSize: 13,
+              fontWeight: 600,
+              cursor: 'default',
+              letterSpacing: '-0.01em',
+              boxShadow:
+                '0 1px 3px rgba(0,0,0,0.3), 0 0 0 1px rgba(0,0,0,0.1)',
+            }}
+          >
+            <i className="hn hn-download" style={{ fontSize: 17 }} />
+            Archive Page
+          </button>
+
+          {/* Design system export */}
+          <button
+            type="button"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: 8,
+              width: '100%',
+              height: 46,
+              background: 'rgba(17,17,17,0.6)',
+              border: '1px solid var(--amber)',
+              borderRadius: 6,
+              color: 'var(--amber)',
+              fontFamily: 'var(--font-sans)',
+              fontSize: 13,
+              fontWeight: 600,
+              cursor: 'default',
+              letterSpacing: '-0.01em',
+              boxShadow:
+                '0 1px 3px rgba(0,0,0,0.3), 0 0 0 1px rgba(0,0,0,0.1)',
+            }}
+          >
+            <i className="hn hn-code-block" style={{ fontSize: 17 }} />
+            Extract Design System
+          </button>
+
+          {/* Divider */}
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 8,
+              fontSize: 11,
+              fontWeight: 600,
+              textTransform: 'uppercase',
+              letterSpacing: '0.07em',
+              color: 'var(--tx-dim)',
+            }}
+          >
+            <div
+              style={{
+                flex: 1,
+                height: 1,
+                background: 'var(--glass-border)',
+              }}
+            />
+            or scan first
+            <div
+              style={{
+                flex: 1,
+                height: 1,
+                background: 'var(--glass-border)',
+              }}
+            />
+          </div>
+
+          {/* Scan + Download row */}
+          <div style={{ display: 'flex', gap: 6 }}>
+            <div
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 6,
+                padding: '0 16px',
+                height: 42,
+                background: 'var(--glass-bg)',
+                border: '1px solid var(--glass-border)',
+                borderRadius: 6,
+                color: 'var(--tx-tertiary)',
+                fontSize: 13,
+                fontWeight: 500,
+                whiteSpace: 'nowrap',
+                flexShrink: 0,
+              }}
+            >
+              <i className="hn hn-search" style={{ fontSize: 15 }} />
+              Scan
+            </div>
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: 6,
+                flex: 1,
+                height: 42,
+                background: 'var(--glass-bg)',
+                border: '1px solid var(--glass-border)',
+                borderRadius: 6,
+                color: 'var(--tx-tertiary)',
+                fontSize: 13,
+                fontWeight: 500,
+                opacity: 0.25,
+              }}
+            >
+              <i className="hn hn-download" style={{ fontSize: 15 }} />
+              Scan first
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   )

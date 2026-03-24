@@ -96,6 +96,9 @@
   --glass-bg:     rgba(255, 255, 255, 0.03);
   --glass-border: rgba(255, 255, 255, 0.07);
 
+  /* Nav floating border (amber-tinted) */
+  --nav-border: color-mix(in srgb, var(--amber) 10%, rgba(255,255,255,0.06));
+
   /* UI tint ramp */
   --ui-04:  rgba(255,255,255,0.04);
   --ui-05:  rgba(255,255,255,0.05);
@@ -134,6 +137,53 @@
   --amber-a60: rgba(234, 179, 8, 0.60);
   --amber-a70: rgba(234, 179, 8, 0.70);
   --amber-a80: rgba(234, 179, 8, 0.80);
+}
+
+/* Nav floating entrance animation */
+@keyframes nav-float-in {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-12px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+}
+
+.nav-float {
+  animation: nav-float-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Collapse nav links on small screens */
+@media (max-width: 600px) {
+  .nav-links {
+    display: none !important;
+  }
+}
+
+/* Hero two-column grid */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+/* Mockup entrance animation */
+@keyframes mockup-float-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.mockup-col {
+  animation: mockup-float-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
 }
 
 @layer utilities {
