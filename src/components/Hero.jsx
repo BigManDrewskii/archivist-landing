@@ -106,6 +106,7 @@ export default function Hero() {
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
+                  minHeight: 48,
                   height: 48,
                   padding: '0 24px',
                   background: 'var(--amber)',
@@ -129,6 +130,7 @@ export default function Hero() {
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
+                  minHeight: 48,
                   height: 48,
                   padding: '0 24px',
                   background: 'rgba(9,9,9,0.5)',
@@ -173,7 +175,7 @@ export default function Hero() {
             </p>
 
             {/* Stat pills */}
-            <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
+            <div className="stat-pills" style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
               {[
                 'v1.0.1 · Manifest V3',
                 'Chrome · Edge · Brave · Arc',

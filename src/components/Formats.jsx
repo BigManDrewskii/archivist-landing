@@ -29,6 +29,7 @@ export default function Formats() {
         </p>
 
         <div
+          className="format-cards"
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',

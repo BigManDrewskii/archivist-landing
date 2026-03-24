@@ -41,6 +41,7 @@ export default function HowItWorks() {
 
         {/* Cards */}
         <div
+          className="how-it-works-cards"
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',

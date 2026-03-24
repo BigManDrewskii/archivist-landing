@@ -10,6 +10,7 @@ const navLinks = [
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -121,11 +122,12 @@ export default function Nav() {
         style={{
           display: 'inline-flex',
           alignItems: 'center',
-          height: 34,
-          padding: '0 16px',
+          minHeight: 44,
+          height: 44,
+          padding: '0 20px',
           background: 'var(--amber)',
           color: '#000',
-          fontSize: 12,
+          fontSize: 13,
           fontWeight: 600,
           borderRadius: 999,
           border: 'none',
