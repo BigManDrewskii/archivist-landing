@@ -1,5 +1,6 @@
 import Nav from './components/Nav'
 import Hero from './components/Hero'
+import VideoBanner from './components/VideoBanner'
 import HowItWorks from './components/HowItWorks'
 import WhatItCaptures from './components/WhatItCaptures'
 import Formats from './components/Formats'
@@ -12,6 +13,7 @@ export default function App() {
       <Nav />
       <main>
         <Hero />
+        <VideoBanner />
         <HowItWorks />
         <WhatItCaptures />
         <Formats />

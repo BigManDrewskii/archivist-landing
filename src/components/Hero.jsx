@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import ExtensionMockup from './ExtensionMockup'
 
-const GUMROAD_URL = 'https://nasus1.gumroad.com/l/mvaelh'
+const GUMROAD_URL = 'https://nasus1.gumroad.com/l/archeo'
 
 export default function Hero() {
   const heroRef = useRef(null)
@@ -83,9 +83,10 @@ export default function Hero() {
                 textShadow: '0 1px 8px rgba(0,0,0,0.5)',
               }}
             >
-              A Chrome extension that pulls down HTML, CSS, fonts, images, and
-              scripts into a folder you can open anytime. No account. No cloud.
-              $9.
+              A Chrome extension that archives any web page as a pixel-perfect
+              offline copy. Captures HTML, CSS, fonts, images, video, audio,
+              and scripts. Choose ZIP, single HTML, or MHTML. No account.
+              No cloud.
             </p>
 
             {/* CTA buttons */}
@@ -174,9 +175,9 @@ export default function Hero() {
             {/* Stat pills */}
             <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
               {[
-                'v1.0.0 · Manifest V3',
+                'v1.0.1 · Manifest V3',
                 'Chrome · Edge · Brave · Arc',
-                'No account. No cloud. Yours.',
+                'Zero data collection. Yours forever.',
               ].map((text) => (
                 <div
                   key={text}

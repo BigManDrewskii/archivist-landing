@@ -58,43 +58,43 @@ const icons = {
 const features = [
   {
     icon: 'dom',
-    title: 'Full DOM traversal',
-    desc: 'Hits every element, shadow root, and srcset. Nothing skipped.',
+    title: 'Deep asset extraction',
+    desc: 'HTML, CSS, JS, fonts, images, video, audio, documents. Scans shadow DOM, srcset, and ResourceTiming API.',
   },
   {
     icon: 'lazy',
-    title: 'Lazy-load handling',
-    desc: 'Scrolls the page before capture so deferred content has loaded.',
+    title: 'Lazy-load capture',
+    desc: 'Scrolls the page automatically before scanning. Deferred images and content load first.',
   },
   {
     icon: 'css',
-    title: 'CSS url() rewriting',
-    desc: 'Font references, background images, and @imports all point to local files.',
+    title: 'Complete CSS rewriting',
+    desc: 'All url() references — fonts, backgrounds, @imports — rewritten to local files. Works offline.',
   },
   {
     icon: 'format',
-    title: 'ZIP, HTML, or MHTML',
-    desc: 'Pick the format that fits your workflow. Switch any time.',
+    title: 'Three output formats',
+    desc: 'ZIP with folder structure, single HTML with everything inlined, or MHTML browser snapshot.',
   },
   {
     icon: 'tracker',
-    title: 'Tracker removal',
-    desc: 'Google Analytics, Hotjar, Segment, Meta Pixel, 30+ others — gone.',
+    title: 'Tracker blocking',
+    desc: 'Google Analytics, Meta Pixel, Hotjar, Segment, and more. Stripped out during capture.',
   },
   {
     icon: 'link',
     title: 'Link rewriting',
-    desc: 'Absolute URLs become relative. You can actually navigate offline.',
+    desc: 'Absolute URLs become relative paths. Internal links work offline. External links preserved.',
   },
   {
     icon: 'design',
-    title: 'Design token export',
-    desc: 'Pulls color palettes, type scales, and spacing as W3C design tokens.',
+    title: 'Design System export',
+    desc: 'Extract colors, typography, and spacing as JSON, Markdown, or Tailwind config.',
   },
   {
     icon: 'local',
-    title: 'Stays on your machine',
-    desc: 'Archives are written to disk. No server, no telemetry, no cloud sync.',
+    title: '100% local, zero data',
+    desc: 'Archives saved to Downloads folder. No account, no cloud, no telemetry. Settings stored in browser.',
   },
 ]
 

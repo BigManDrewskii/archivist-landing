@@ -1,4 +1,4 @@
-const GUMROAD_URL = 'https://nasus1.gumroad.com/l/mvaelh'
+const GUMROAD_URL = 'https://nasus1.gumroad.com/l/archeo'
 
 export default function FooterCTA() {
   return (

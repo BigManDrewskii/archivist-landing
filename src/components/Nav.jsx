@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-const GUMROAD_URL = 'https://nasus1.gumroad.com/l/mvaelh'
+const GUMROAD_URL = 'https://nasus1.gumroad.com/l/archeo'
 
 const navLinks = [
   { label: 'How it works', href: '#how-it-works' },

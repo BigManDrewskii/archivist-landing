@@ -1,18 +1,23 @@
 const steps = [
   {
     num: '01',
-    title: 'Install',
-    desc: 'Load the extension in Chrome. No sign-in, no account. Done.',
+    title: 'Click the icon',
+    desc: 'Open the popup from your toolbar, right-click any page, or press Alt+Shift+A. Choose ZIP, single HTML, or MHTML.',
   },
   {
     num: '02',
-    title: 'Archive',
-    desc: 'Click the icon. Archeo fetches every asset on the page — CSS, fonts, images, scripts, lazy-loaded content, shadow DOM — and saves it locally.',
+    title: 'Scan (optional)',
+    desc: 'Preview what will be captured — all assets on the page. See images, fonts, scripts, and lazy-loaded content before downloading.',
   },
   {
     num: '03',
-    title: 'Open offline',
-    desc: 'Unzip, open index.html. It looks the same. No requests go out, nothing is missing.',
+    title: 'Archive',
+    desc: 'Click to download. Archeo fetches HTML, CSS, fonts, images, video, audio, and scripts. All links rewritten for offline use.',
+  },
+  {
+    num: '04',
+    title: 'Open anytime',
+    desc: 'Your archive is saved locally. Open index.html (ZIP), the HTML file, or MHTML in your browser. No internet needed.',
   },
 ]
 

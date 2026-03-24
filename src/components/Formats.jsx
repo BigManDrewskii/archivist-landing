@@ -2,19 +2,19 @@ const formats = [
   {
     title: 'ZIP Archive',
     recommended: true,
-    desc: 'Files in a folder, same structure as the original site. Open index.html and browse normally. Good for sharing — the other person just unzips.',
+    desc: 'Maintains original folder structure. Open index.html to browse offline. Best for sharing and preserving site organization.',
     tag: 'index.html · assets/ · _cdn/',
   },
   {
     title: 'Single HTML',
     recommended: false,
-    desc: 'Every asset base64-encoded into one file. Email it, drop it in Notion, open it on a plane. No folder, no dependencies.',
+    desc: 'All assets inlined as base64. One file, no dependencies. Email it, add to Notion, or open anywhere without internet.',
     tag: 'archive.html',
   },
   {
     title: 'MHTML',
     recommended: false,
-    desc: 'Chrome, Edge, and Opera open it natively with no setup. Exactly what the browser had at capture time.',
+    desc: 'Browser-native snapshot. Opens in Chrome, Edge, and Opera. Exact capture of page state without JavaScript execution.',
     tag: '.mhtml',
   },
 ]
