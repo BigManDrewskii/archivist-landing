@@ -85,7 +85,7 @@
       pointerEvents: 'none',
       zIndex     : '0',
       display    : 'block',
-      filter     : 'blur(0.6px)',
+      filter     : 'blur(1.2px)',
     });
     if (getComputedStyle(container).position === 'static') {
       container.style.position = 'relative';

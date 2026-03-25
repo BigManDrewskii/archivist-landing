@@ -131,9 +131,9 @@ export default function Nav() {
         style={{
           display: 'inline-flex',
           alignItems: 'center',
-          minHeight: 36,
-          height: 36,
-          padding: '0 16px',
+          minHeight: 40,
+          height: 40,
+          padding: '0 18px',
           background: 'var(--amber)',
           color: '#000',
           fontSize: 12,
