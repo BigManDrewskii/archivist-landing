@@ -16,7 +16,7 @@
     fontFamily : 'JetBrains Mono, Fira Code, monospace',
     fontSize   : 13,           // px — char cell size
     lineHeight : 1.55,
-    fps        : 30,
+    fps        : 24,
 
     // colour palette (matches Archeo's CSS vars)
     bgColor    : '#090909',
@@ -24,10 +24,10 @@
     dimHex     : '#3c3c3c',    // --tx-ghost (faint grid)
 
     // layers
-    gridOpacity   : 0.28,      // static faint ASCII grid
-    streamCount   : 22,        // falling data-streams
-    glitchOpacity : 0.55,      // highlighted glitch chars
-    scanlineAlpha : 0.03,      // subtle scanlines
+    gridOpacity   : 0.20,      // static faint ASCII grid
+    streamCount   : 16,        // falling data-streams
+    glitchOpacity : 0.42,      // highlighted glitch chars
+    scanlineAlpha : 0.02,      // subtle scanlines
   };
   /* ────────────────────────────────────────────────────────────────── */
 
@@ -85,6 +85,7 @@
       pointerEvents: 'none',
       zIndex     : '0',
       display    : 'block',
+      filter     : 'blur(0.6px)',
     });
     if (getComputedStyle(container).position === 'static') {
       container.style.position = 'relative';
