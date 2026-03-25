@@ -32,7 +32,7 @@ export default function Nav() {
         justifyContent: 'space-between',
         maxWidth: 720,
         width: 'calc(100% - 32px)',
-        height: 40,
+        height: 48,
         padding: '0 20px',
         background: scrolled
           ? 'rgba(9, 9, 9, 0.92)'
@@ -133,7 +133,7 @@ export default function Nav() {
           alignItems: 'center',
           height: 36,
           padding: '0 18px',
-          margin: '2px 0',
+          margin: '6px 0',
           background: 'var(--amber)',
           color: '#000',
           fontSize: 12,
