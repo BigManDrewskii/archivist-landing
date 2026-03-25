@@ -31,23 +31,37 @@ export default function ExtensionMockup() {
           justifyContent: 'space-between',
           height: 52,
           padding: '0 20px',
-          background: 'rgba(5,5,5,0.7)',
+          background: 'linear-gradient(180deg, rgba(8,6,4,1) 0%, rgba(12,10,8,1) 100%)',
           borderBottom: '1px solid var(--glass-border)',
+          position: 'relative',
         }}
       >
-        <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+        {/* Amber gradient underline */}
+        <div
+          style={{
+            position: 'absolute',
+            bottom: -1,
+            left: 0,
+            right: 0,
+            height: 1,
+            background: 'linear-gradient(90deg, transparent 0%, rgba(234,179,60,0.15) 50%, transparent 100%)',
+            opacity: 0.6,
+          }}
+        />
+
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
           <img
             src="/archeo-logo.svg"
             alt="Archeo"
-            style={{ width: 24, height: 24, display: 'block' }}
+            style={{ width: 28, height: 28, display: 'block' }}
           />
           <span
             style={{
               fontFamily: 'var(--font-display)',
-              fontSize: 14,
-              fontWeight: 600,
+              fontSize: 15,
+              fontWeight: 700,
               color: 'var(--tx-primary)',
-              letterSpacing: '-0.01em',
+              letterSpacing: '-0.02em',
             }}
           >
             archeo
@@ -55,10 +69,11 @@ export default function ExtensionMockup() {
           <span
             style={{
               fontFamily: 'var(--font-display)',
-              fontSize: 14,
-              fontWeight: 600,
+              fontSize: 15,
+              fontWeight: 500,
               color: 'var(--amber)',
               letterSpacing: '-0.01em',
+              opacity: 0.9,
             }}
           >
             .dev
@@ -105,7 +120,7 @@ export default function ExtensionMockup() {
           alignItems: 'center',
           gap: 12,
           padding: '12px 20px',
-          background: 'rgba(12,12,12,0.6)',
+          background: 'var(--bg-surface, #100e0c)',
           borderBottom: '1px solid var(--glass-border)',
           minHeight: 52,
         }}
@@ -172,10 +187,10 @@ export default function ExtensionMockup() {
               fontSize: 9,
               fontWeight: 500,
               padding: '2px 4px',
-              border: '1px solid var(--green-a22, rgba(34,197,94,0.22))',
+              border: '1px solid var(--green-a22, rgba(74,222,128,0.22))',
               borderRadius: 4,
-              color: 'var(--green, #22c55e)',
-              background: 'var(--green-a08, rgba(34,197,94,0.08))',
+              color: 'var(--green, #4ade80)',
+              background: 'var(--green-a08, rgba(74,222,128,0.08))',
               textTransform: 'uppercase',
               letterSpacing: '0.06em',
             }}
@@ -225,13 +240,21 @@ export default function ExtensionMockup() {
               fontWeight: 600,
               letterSpacing: '-0.01em',
               boxShadow:
-                '0 2px 8px rgba(0,0,0,0.35), 0 0 0 1px rgba(0,0,0,0.12), inset 0 1px 0 rgba(255,255,255,0.25)',
+                '0 1px 3px rgba(0,0,0,0.4), 0 0 0 1px rgba(0,0,0,0.15)',
               position: 'relative',
               overflow: 'hidden',
             }}
           >
-            <i className="hn hn-download" style={{ fontSize: 18, flexShrink: 0 }} />
-            <span>Download Archive</span>
+            {/* Shimmer effect */}
+            <div
+              style={{
+                position: 'absolute',
+                inset: 0,
+                background: 'linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.1) 50%, transparent 100%)',
+              }}
+            />
+            <i className="hn hn-download" style={{ fontSize: 18, flexShrink: 0, position: 'relative', zIndex: 1 }} />
+            <span style={{ position: 'relative', zIndex: 1 }}>Download Archive</span>
           </div>
           <div
             style={{
@@ -301,7 +324,7 @@ export default function ExtensionMockup() {
                 Output Format
               </div>
 
-              <div style={{ display: 'flex', gap: 6 }}>
+              <div style={{ display: 'flex', gap: 6, marginBottom: 16 }}>
                 {[
                   { icon: 'hn-download-alt', label: 'ZIP Archive', active: true },
                   { icon: 'hn-code', label: 'Single HTML', active: false },
@@ -324,7 +347,7 @@ export default function ExtensionMockup() {
                       fontWeight: 500,
                       whiteSpace: 'nowrap',
                       boxShadow: active
-                        ? '0 0 0 1px var(--amber-a12), 0 1px 3px rgba(0,0,0,0.15)'
+                        ? '0 0 0 1px var(--amber-a12)'
                         : 'none',
                     }}
                   >
@@ -383,7 +406,7 @@ export default function ExtensionMockup() {
                       fontSize: 12,
                       fontWeight: 500,
                       boxShadow: checked
-                        ? '0 0 0 1px var(--amber-a12), 0 1px 2px rgba(0,0,0,0.12)'
+                        ? '0 0 0 1px var(--amber-a12)'
                         : 'none',
                     }}
                   >
