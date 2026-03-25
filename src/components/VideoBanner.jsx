@@ -78,7 +78,6 @@ export default function VideoBanner() {
             overflow: 'hidden',
             background: '#000',
             boxShadow: '0 4px 24px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.05)',
-            aspectRatio: '16 / 9',
           }}
         >
           <video
@@ -89,8 +88,7 @@ export default function VideoBanner() {
             playsInline
             style={{
               width: '100%',
-              height: '100%',
-              objectFit: 'cover',
+              height: 'auto',
               display: 'block',
               cursor: 'pointer',
             }}
