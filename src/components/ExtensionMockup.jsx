@@ -66,18 +66,6 @@ export default function ExtensionMockup() {
           >
             archeo
           </span>
-          <span
-            style={{
-              fontFamily: 'var(--font-display)',
-              fontSize: 15,
-              fontWeight: 500,
-              color: 'var(--amber)',
-              letterSpacing: '-0.01em',
-              opacity: 0.9,
-            }}
-          >
-            .dev
-          </span>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 3 }}>
           <div
@@ -324,7 +312,7 @@ export default function ExtensionMockup() {
                 Output Format
               </div>
 
-              <div style={{ display: 'flex', gap: 6, marginBottom: 16 }}>
+              <div style={{ display: 'flex', gap: 6 }}>
                 {[
                   { icon: 'hn-download-alt', label: 'ZIP Archive', active: true },
                   { icon: 'hn-code', label: 'Single HTML', active: false },
@@ -437,78 +425,6 @@ export default function ExtensionMockup() {
                 Advanced Options
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* ── Stats Bar (simplified) ─────────────────────────── */}
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            margin: '16px 0 0',
-            padding: '12px 16px',
-            border: '1px solid var(--glass-border)',
-            borderRadius: 6,
-            background: 'rgba(12,12,12,0.6)',
-          }}
-        >
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'baseline',
-              gap: 4,
-              flex: 1,
-            }}
-          >
-            <i className="hn hn-box-usd" style={{ fontSize: 14, color: 'var(--tx-dim)' }} />
-            <span
-              style={{
-                fontFamily: 'var(--font-mono)',
-                fontSize: 15,
-                fontWeight: 600,
-                color: 'var(--tx-primary)',
-              }}
-            >
-              70
-            </span>
-            <small
-              style={{
-                fontFamily: 'var(--font-mono)',
-                fontSize: 11,
-                color: 'var(--tx-tertiary)',
-              }}
-            >
-              assets
-            </small>
-          </div>
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'baseline',
-              gap: 4,
-              flex: 1,
-            }}
-          >
-            <i className="hn hn-box-usd" style={{ fontSize: 14, color: 'var(--tx-dim)' }} />
-            <span
-              style={{
-                fontFamily: 'var(--font-mono)',
-                fontSize: 15,
-                fontWeight: 600,
-                color: 'var(--amber)',
-              }}
-            >
-              ~4.2 MB
-            </span>
-            <small
-              style={{
-                fontFamily: 'var(--font-mono)',
-                fontSize: 11,
-                color: 'var(--tx-tertiary)',
-              }}
-            >
-              est.
-            </small>
           </div>
         </div>
 
