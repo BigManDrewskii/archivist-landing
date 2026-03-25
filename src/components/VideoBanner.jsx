@@ -1,8 +1,32 @@
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 
 export default function VideoBanner() {
   const videoRef = useRef(null)
   const [isPlaying, setIsPlaying] = useState(false)
+  const containerRef = useRef(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !isPlaying) {
+            videoRef.current?.play().then(() => {
+              setIsPlaying(true)
+            }).catch(() => {
+              // Auto-play was prevented, user needs to interact
+            })
+          }
+        })
+      },
+      { threshold: 0.5 }
+    )
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [isPlaying])
 
   const togglePlay = () => {
     if (videoRef.current) {
@@ -18,6 +42,7 @@ export default function VideoBanner() {
 
   return (
     <section
+      ref={containerRef}
       style={{
         position: 'relative',
         paddingTop: 96,
