@@ -10,7 +10,6 @@ const navLinks = [
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -32,9 +31,9 @@ export default function Nav() {
         alignItems: 'center',
         justifyContent: 'space-between',
         maxWidth: 720,
-        width: 'calc(100% - 24px)',
+        width: 'calc(100% - 32px)',
         height: 48,
-        padding: '0 6px 0 20px',
+        padding: '0 20px',
         background: scrolled
           ? 'rgba(9, 9, 9, 0.92)'
           : 'rgba(9, 9, 9, 0.78)',
@@ -45,7 +44,7 @@ export default function Nav() {
         boxShadow: scrolled
           ? '0 2px 20px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.03)'
           : '0 4px 30px rgba(0,0,0,0.35), 0 0 0 1px rgba(255,255,255,0.03)',
-        transition: 'background 0.3s ease-out, box-shadow 0.3s ease-out',
+        transition: 'background 0.2s ease-out, box-shadow 0.2s ease-out',
       }}
     >
       {/* Logo */}
@@ -81,14 +80,14 @@ export default function Nav() {
       </a>
 
       {/* Center links */}
-      <div className="nav-links" style={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+      <div className="nav-links" style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
         {navLinks.map((link) => (
           <a
             key={link.href}
             href={link.href}
             className="nav-link"
             style={{
-              padding: '6px 14px',
+              padding: '8px 16px',
               fontSize: 12,
               fontWeight: 500,
               color: 'var(--tx-tertiary)',
