@@ -1,9 +1,15 @@
 // Pixel-accurate recreation of the Archeo.dev Chrome extension popup
 // Matches /Users/drewskii/Desktop/archeo-dev-v1.0/popup.html + popup.css exactly
 
+import { useState } from 'react'
+
 export default function ExtensionMockup() {
+  const [isHovered, setIsHovered] = useState(false)
+
   return (
     <div
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
       style={{
         width: 380,
         background: 'rgba(9,9,9,0.75)',
@@ -11,16 +17,20 @@ export default function ExtensionMockup() {
         WebkitBackdropFilter: 'blur(16px) saturate(1.2)',
         borderRadius: 10,
         border: '1px solid var(--glass-border)',
-        boxShadow:
-          '0 12px 48px rgba(0,0,0,0.65), 0 0 0 1px rgba(255,255,255,0.04), inset 0 1px 0 rgba(255,255,255,0.06)',
+        boxShadow: isHovered
+          ? '0 20px 60px rgba(0,0,0,0.75), 0 0 0 1px rgba(255,255,255,0.06), inset 0 1px 0 rgba(255,255,255,0.08)'
+          : '0 12px 48px rgba(0,0,0,0.65), 0 0 0 1px rgba(255,255,255,0.04), inset 0 1px 0 rgba(255,255,255,0.06)',
         overflow: 'hidden',
         fontFamily: 'var(--font-sans)',
         fontSize: 14,
         color: 'var(--tx-secondary)',
         letterSpacing: '-0.01em',
         userSelect: 'none',
-        transform: 'perspective(1200px) rotateY(-4deg) scale(1.02)',
-        transition: 'transform 0.3s ease-out',
+        transform: isHovered
+          ? 'perspective(1200px) rotateY(-2deg) scale(1.04) translateY(-4px)'
+          : 'perspective(1200px) rotateY(-4deg) scale(1.02)',
+        transition: 'transform 0.3s ease-out, box-shadow 0.3s ease-out',
+        cursor: 'pointer',
       }}
     >
       {/* ── Header ─────────────────────────────── */}
