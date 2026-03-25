@@ -100,15 +100,15 @@ const features = [
 
 export default function WhatItCaptures() {
   return (
-    <section id="what-it-captures" style={{ paddingTop: 80, paddingBottom: 80, borderTop: '1px solid var(--glass-border)' }}>
+    <section id="what-it-captures" style={{ paddingTop: 96, paddingBottom: 96, borderTop: '1px solid var(--glass-border)' }}>
       <div style={{ maxWidth: 960, margin: '0 auto', padding: '0 24px' }}>
 
         {/* Header */}
-        <div style={{ marginBottom: 36 }}>
-          <p style={{ fontSize: 11, color: 'var(--tx-muted)', letterSpacing: '0.08em', textTransform: 'uppercase', fontWeight: 600, marginBottom: 8, fontFamily: 'var(--font-display)' }}>
+        <div style={{ marginBottom: 40 }}>
+          <p style={{ fontSize: 11, color: 'var(--tx-muted)', letterSpacing: '0.08em', textTransform: 'uppercase', fontWeight: 600, marginBottom: 12, fontFamily: 'var(--font-display)' }}>
             What it captures
           </p>
-          <h2 style={{ fontSize: 22, fontWeight: 700, color: 'var(--tx-primary)', letterSpacing: '-0.02em', marginBottom: 6, fontFamily: 'var(--font-display)' }}>
+          <h2 style={{ fontSize: 22, fontWeight: 700, color: 'var(--tx-primary)', letterSpacing: '-0.02em', marginBottom: 8, fontFamily: 'var(--font-display)' }}>
             More than Save Page As
           </h2>
           <p style={{ fontSize: 14, color: 'var(--tx-tertiary)', fontFamily: 'var(--font-sans)' }}>The stuff the browser misses. All of it.</p>
@@ -120,7 +120,7 @@ export default function WhatItCaptures() {
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
-            gap: 10,
+            gap: 16,
           }}
         >
           {features.map(({ icon, title, desc }) => (
@@ -130,14 +130,14 @@ export default function WhatItCaptures() {
                 background: 'var(--bg-elevated)',
                 border: '1px solid var(--glass-border)',
                 borderRadius: 8,
-                padding: '20px',
+                padding: '24px',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.4)',
                 transition: 'border-color 0.15s',
               }}
               onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--amber-a15)'}
               onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--glass-border)'}
             >
-              <div style={{ marginBottom: 10 }}>{icons[icon]}</div>
+              <div style={{ marginBottom: 12 }}>{icons[icon]}</div>
               <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--tx-primary)', marginBottom: 5, letterSpacing: '-0.01em', fontFamily: 'var(--font-display)' }}>{title}</div>
               <p style={{ fontSize: 12, color: 'var(--tx-tertiary)', lineHeight: 1.55, fontFamily: 'var(--font-sans)' }}>{desc}</p>
             </div>

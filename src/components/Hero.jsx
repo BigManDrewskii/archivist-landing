@@ -65,6 +65,7 @@ export default function Hero() {
                 fontFamily: 'var(--font-display)',
                 textShadow: '0 2px 20px rgba(0,0,0,0.7)',
               }}
+              id="hero-heading"
             >
               The page you saved
               <br />
@@ -116,12 +117,14 @@ export default function Hero() {
                   borderRadius: 8,
                   textDecoration: 'none',
                   letterSpacing: '-0.01em',
-                  transition: 'opacity 0.15s ease-out',
+                  transition: 'opacity 0.15s ease-out, box-shadow 0.15s ease-out',
                   border: 'none',
                   fontFamily: 'var(--font-sans)',
                 }}
                 onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.85')}
                 onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
+                onFocus={(e) => (e.currentTarget.style.boxShadow = '0 0 0 2px var(--amber-a25)')}
+                onBlur={(e) => (e.currentTarget.style.boxShadow = 'none')}
               >
                 Name your price → from $9
               </a>
@@ -144,7 +147,7 @@ export default function Hero() {
                   letterSpacing: '-0.01em',
                   border: '1px solid var(--glass-border)',
                   transition:
-                    'color 0.15s ease-out, border-color 0.15s ease-out',
+                    'color 0.15s ease-out, border-color 0.15s ease-out, box-shadow 0.15s ease-out',
                   fontFamily: 'var(--font-sans)',
                 }}
                 onMouseEnter={(e) => {
@@ -155,6 +158,8 @@ export default function Hero() {
                   e.currentTarget.style.color = 'var(--tx-tertiary)'
                   e.currentTarget.style.borderColor = 'var(--glass-border)'
                 }}
+                onFocus={(e) => (e.currentTarget.style.boxShadow = '0 0 0 2px var(--amber-a25)')}
+                onBlur={(e) => (e.currentTarget.style.boxShadow = 'none')}
               >
                 See what it captures →
               </a>

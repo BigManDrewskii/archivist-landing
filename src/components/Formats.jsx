@@ -24,7 +24,7 @@ export default function Formats() {
     <section style={{ paddingTop: 80, paddingBottom: 80, borderTop: '1px solid var(--glass-border)' }}>
       <div style={{ maxWidth: 960, margin: '0 auto', padding: '0 24px' }}>
 
-        <p style={{ fontSize: 11, color: 'var(--tx-muted)', letterSpacing: '0.08em', textTransform: 'uppercase', fontWeight: 600, marginBottom: 28, fontFamily: 'var(--font-display)' }}>
+        <p style={{ fontSize: 11, color: 'var(--tx-muted)', letterSpacing: '0.08em', textTransform: 'uppercase', fontWeight: 600, marginBottom: 32, fontFamily: 'var(--font-display)' }}>
           Pick your format
         </p>
 
@@ -33,7 +33,7 @@ export default function Formats() {
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-            gap: 12,
+            gap: 16,
           }}
         >
           {formats.map(({ title, recommended, desc, tag }) => (
@@ -47,7 +47,7 @@ export default function Formats() {
                 boxShadow: '0 1px 3px rgba(0,0,0,0.4)',
                 display: 'flex',
                 flexDirection: 'column',
-                gap: 10,
+                gap: 12,
                 transition: 'border-color 0.15s',
               }}
               onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--amber-a15)'}

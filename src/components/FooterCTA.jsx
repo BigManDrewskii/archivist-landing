@@ -49,12 +49,14 @@ export default function FooterCTA() {
             textDecoration: 'none',
             letterSpacing: '-0.01em',
             marginBottom: 14,
-            transition: 'opacity 0.15s',
+            transition: 'opacity 0.15s ease-out, box-shadow 0.15s ease-out',
             border: 'none',
             fontFamily: 'var(--font-sans)',
           }}
           onMouseEnter={e => e.currentTarget.style.opacity = '0.85'}
           onMouseLeave={e => e.currentTarget.style.opacity = '1'}
+          onFocus={e => e.currentTarget.style.boxShadow = '0 0 0 2px var(--amber-a25)'}
+          onBlur={e => e.currentTarget.style.boxShadow = 'none'}
         >
           Get Archeo → from $9
         </a>

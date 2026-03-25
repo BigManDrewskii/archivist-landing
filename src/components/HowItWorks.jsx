@@ -23,7 +23,7 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section style={{ paddingTop: 80, paddingBottom: 80, borderTop: '1px solid var(--glass-border)' }}>
+    <section style={{ paddingTop: 64, paddingBottom: 64, borderTop: '1px solid var(--glass-border)' }}>
       <div style={{ maxWidth: 960, margin: '0 auto', padding: '0 24px' }}>
 
         {/* Section label */}
@@ -33,7 +33,7 @@ export default function HowItWorks() {
           letterSpacing: '0.08em',
           textTransform: 'uppercase',
           fontWeight: 600,
-          marginBottom: 28,
+          marginBottom: 32,
           fontFamily: 'var(--font-display)',
         }}>
           How it works
@@ -45,7 +45,7 @@ export default function HowItWorks() {
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-            gap: 12,
+            gap: 16,
           }}
         >
           {steps.map(({ num, title, desc }) => (

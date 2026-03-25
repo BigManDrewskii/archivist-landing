@@ -96,7 +96,7 @@ export default function Nav() {
               borderRadius: 999,
               letterSpacing: '-0.01em',
               fontFamily: 'var(--font-sans)',
-              transition: 'color 0.15s ease-out, background 0.15s ease-out',
+              transition: 'color 0.15s ease-out, background 0.15s ease-out, box-shadow 0.15s ease-out',
               whiteSpace: 'nowrap',
             }}
             onMouseEnter={e => {
@@ -106,6 +106,16 @@ export default function Nav() {
             onMouseLeave={e => {
               e.currentTarget.style.color = 'var(--tx-tertiary)'
               e.currentTarget.style.background = 'transparent'
+            }}
+            onFocus={e => {
+              e.currentTarget.style.color = 'var(--tx-primary)'
+              e.currentTarget.style.background = 'var(--ui-06)'
+              e.currentTarget.style.boxShadow = '0 0 0 2px var(--amber-a25)'
+            }}
+            onBlur={e => {
+              e.currentTarget.style.color = 'var(--tx-tertiary)'
+              e.currentTarget.style.background = 'transparent'
+              e.currentTarget.style.boxShadow = 'none'
             }}
           >
             {link.label}
@@ -134,7 +144,7 @@ export default function Nav() {
           textDecoration: 'none',
           letterSpacing: '-0.01em',
           fontFamily: 'var(--font-sans)',
-          transition: 'opacity 0.15s ease-out, transform 0.15s ease-out',
+          transition: 'opacity 0.15s ease-out, transform 0.15s ease-out, box-shadow 0.15s ease-out',
           whiteSpace: 'nowrap',
           flexShrink: 0,
         }}
@@ -145,6 +155,12 @@ export default function Nav() {
         onMouseLeave={e => {
           e.currentTarget.style.opacity = '1'
           e.currentTarget.style.transform = 'scale(1)'
+        }}
+        onFocus={e => {
+          e.currentTarget.style.boxShadow = '0 0 0 2px var(--amber-a25)'
+        }}
+        onBlur={e => {
+          e.currentTarget.style.boxShadow = 'none'
         }}
       >
         Get it — from $9

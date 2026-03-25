@@ -18,11 +18,19 @@ export default function Footer() {
           color: 'var(--tx-muted)',
           textDecoration: 'none',
           letterSpacing: '-0.01em',
-          transition: 'color 0.15s',
+          transition: 'color 0.15s ease-out, box-shadow 0.15s ease-out',
           fontFamily: 'var(--font-sans)',
         }}
         onMouseEnter={e => e.currentTarget.style.color = 'var(--tx-tertiary)'}
         onMouseLeave={e => e.currentTarget.style.color = 'var(--tx-muted)'}
+        onFocus={e => {
+          e.currentTarget.style.color = 'var(--tx-tertiary)'
+          e.currentTarget.style.boxShadow = '0 0 0 2px var(--amber-a25)'
+        }}
+        onBlur={e => {
+          e.currentTarget.style.color = 'var(--tx-muted)'
+          e.currentTarget.style.boxShadow = 'none'
+        }}
       >
         hello@archeo.dev
       </a>

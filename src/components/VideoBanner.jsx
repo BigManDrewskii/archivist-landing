@@ -45,8 +45,8 @@ export default function VideoBanner() {
       ref={containerRef}
       style={{
         position: 'relative',
-        paddingTop: 80,
-        paddingBottom: 80,
+        paddingTop: 96,
+        paddingBottom: 96,
         borderTop: '1px solid var(--glass-border)',
       }}
     >
@@ -93,11 +93,21 @@ export default function VideoBanner() {
               cursor: 'pointer',
             }}
             onClick={togglePlay}
+            aria-label="Demo video showing Archeo page capture in action"
           />
 
           {/* Play/pause overlay */}
           <div
             onClick={togglePlay}
+            role="button"
+            tabIndex={0}
+            aria-label={isPlaying ? 'Pause video' : 'Play video'}
+            onKeyPress={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault()
+                togglePlay()
+              }
+            }}
             style={{
               position: 'absolute',
               top: 0,
@@ -121,6 +131,15 @@ export default function VideoBanner() {
               if (!isPlaying) {
                 e.currentTarget.style.background = 'rgba(0,0,0,0.3)'
               }
+            }}
+            onFocus={(e) => {
+              if (!isPlaying) {
+                e.currentTarget.style.outline = 'none'
+                e.currentTarget.style.boxShadow = '0 0 0 2px var(--amber-a25)'
+              }
+            }}
+            onBlur={(e) => {
+              e.currentTarget.style.boxShadow = 'none'
             }}
           >
             {!isPlaying && (
