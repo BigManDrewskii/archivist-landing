@@ -1,32 +1,8 @@
-import { useRef, useEffect, useState } from 'react'
+import { useRef, useState } from 'react'
 
 export default function VideoBanner() {
   const videoRef = useRef(null)
   const [isPlaying, setIsPlaying] = useState(false)
-  const containerRef = useRef(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && !isPlaying) {
-            videoRef.current?.play().then(() => {
-              setIsPlaying(true)
-            }).catch(() => {
-              // Auto-play was prevented, user needs to interact
-            })
-          }
-        })
-      },
-      { threshold: 0.5 }
-    )
-
-    if (containerRef.current) {
-      observer.observe(containerRef.current)
-    }
-
-    return () => observer.disconnect()
-  }, [isPlaying])
 
   const togglePlay = () => {
     if (videoRef.current) {
@@ -42,7 +18,6 @@ export default function VideoBanner() {
 
   return (
     <section
-      ref={containerRef}
       style={{
         position: 'relative',
         paddingTop: 96,
@@ -51,20 +26,6 @@ export default function VideoBanner() {
       }}
     >
       <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 24px' }}>
-
-        {/* Section label */}
-        <p style={{
-          fontSize: 11,
-          color: 'var(--tx-muted)',
-          letterSpacing: '0.08em',
-          textTransform: 'uppercase',
-          fontWeight: 600,
-          marginBottom: 28,
-          textAlign: 'center',
-          fontFamily: 'var(--font-display)',
-        }}>
-          See it in action
-        </p>
 
         {/* Video frame */}
         <div

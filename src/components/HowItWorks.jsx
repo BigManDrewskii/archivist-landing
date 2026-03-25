@@ -26,19 +26,6 @@ export default function HowItWorks() {
     <section style={{ paddingTop: 64, paddingBottom: 64, borderTop: '1px solid var(--glass-border)' }}>
       <div style={{ maxWidth: 960, margin: '0 auto', padding: '0 24px' }}>
 
-        {/* Section label */}
-        <p style={{
-          fontSize: 11,
-          color: 'var(--tx-muted)',
-          letterSpacing: '0.08em',
-          textTransform: 'uppercase',
-          fontWeight: 600,
-          marginBottom: 32,
-          fontFamily: 'var(--font-display)',
-        }}>
-          How it works
-        </p>
-
         {/* Cards */}
         <div
           className="how-it-works-cards"

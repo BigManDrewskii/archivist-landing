@@ -24,10 +24,6 @@ export default function Formats() {
     <section style={{ paddingTop: 80, paddingBottom: 80, borderTop: '1px solid var(--glass-border)' }}>
       <div style={{ maxWidth: 960, margin: '0 auto', padding: '0 24px' }}>
 
-        <p style={{ fontSize: 11, color: 'var(--tx-muted)', letterSpacing: '0.08em', textTransform: 'uppercase', fontWeight: 600, marginBottom: 32, fontFamily: 'var(--font-display)' }}>
-          Pick your format
-        </p>
-
         <div
           className="format-cards"
           style={{

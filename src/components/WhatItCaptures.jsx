@@ -103,17 +103,6 @@ export default function WhatItCaptures() {
     <section id="what-it-captures" style={{ paddingTop: 96, paddingBottom: 96, borderTop: '1px solid var(--glass-border)' }}>
       <div style={{ maxWidth: 960, margin: '0 auto', padding: '0 24px' }}>
 
-        {/* Header */}
-        <div style={{ marginBottom: 40 }}>
-          <p style={{ fontSize: 11, color: 'var(--tx-muted)', letterSpacing: '0.08em', textTransform: 'uppercase', fontWeight: 600, marginBottom: 12, fontFamily: 'var(--font-display)' }}>
-            What it captures
-          </p>
-          <h2 style={{ fontSize: 22, fontWeight: 700, color: 'var(--tx-primary)', letterSpacing: '-0.02em', marginBottom: 8, fontFamily: 'var(--font-display)' }}>
-            More than Save Page As
-          </h2>
-          <p style={{ fontSize: 14, color: 'var(--tx-tertiary)', fontFamily: 'var(--font-sans)' }}>The stuff the browser misses. All of it.</p>
-        </div>
-
         {/* Grid */}
         <div
           className="feature-cards"

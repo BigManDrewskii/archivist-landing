@@ -12,13 +12,15 @@ export default function ExtensionMockup() {
         borderRadius: 10,
         border: '1px solid var(--glass-border)',
         boxShadow:
-          '0 8px 40px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.03)',
+          '0 12px 48px rgba(0,0,0,0.65), 0 0 0 1px rgba(255,255,255,0.04), inset 0 1px 0 rgba(255,255,255,0.06)',
         overflow: 'hidden',
         fontFamily: 'var(--font-sans)',
         fontSize: 14,
         color: 'var(--tx-secondary)',
         letterSpacing: '-0.01em',
         userSelect: 'none',
+        transform: 'perspective(1200px) rotateY(-4deg) scale(1.02)',
+        transition: 'transform 0.3s ease-out',
       }}
     >
       {/* ── Header ─────────────────────────────── */}
@@ -223,7 +225,7 @@ export default function ExtensionMockup() {
               fontWeight: 600,
               letterSpacing: '-0.01em',
               boxShadow:
-                '0 1px 3px rgba(0,0,0,0.4), 0 0 0 1px rgba(0,0,0,0.15)',
+                '0 2px 8px rgba(0,0,0,0.35), 0 0 0 1px rgba(0,0,0,0.12), inset 0 1px 0 rgba(255,255,255,0.25)',
               position: 'relative',
               overflow: 'hidden',
             }}
@@ -321,7 +323,9 @@ export default function ExtensionMockup() {
                       fontSize: 12,
                       fontWeight: 500,
                       whiteSpace: 'nowrap',
-                      boxShadow: active ? '0 0 0 1px var(--amber-a12)' : 'none',
+                      boxShadow: active
+                        ? '0 0 0 1px var(--amber-a12), 0 1px 3px rgba(0,0,0,0.15)'
+                        : 'none',
                     }}
                   >
                     <i className={`hn ${icon}`} style={{ fontSize: 15 }} />
@@ -378,7 +382,9 @@ export default function ExtensionMockup() {
                         : 'var(--tx-muted)',
                       fontSize: 12,
                       fontWeight: 500,
-                      boxShadow: checked ? '0 0 0 1px var(--amber-a12)' : 'none',
+                      boxShadow: checked
+                        ? '0 0 0 1px var(--amber-a12), 0 1px 2px rgba(0,0,0,0.12)'
+                        : 'none',
                     }}
                   >
                     {label}
