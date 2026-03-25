@@ -134,6 +134,7 @@ export default function Nav() {
           minHeight: 40,
           height: 40,
           padding: '0 18px',
+          margin: '4px 0',
           background: 'var(--amber)',
           color: '#000',
           fontSize: 12,
