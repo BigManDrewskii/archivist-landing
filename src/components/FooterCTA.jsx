@@ -66,7 +66,7 @@ export default function FooterCTA() {
             fontFamily: 'var(--font-sans)',
           }}
         >
-          Pay what you want, minimum $9. Yours forever — no subscription, no renewal, no cloud.
+          Start with 5 free archives. Upgrade to Pro for unlimited — from $9, one license, forever. No subscription, no cloud.
         </p>
 
         <a
@@ -103,11 +103,11 @@ export default function FooterCTA() {
           onFocus={e => e.currentTarget.style.boxShadow = '0 0 0 2px var(--amber-a25), 0 4px 16px rgba(0,0,0,0.3)'}
           onBlur={e => e.currentTarget.style.boxShadow = '0 4px 16px rgba(0,0,0,0.3), 0 0 0 1px rgba(255,255,255,0.05), inset 0 1px 0 rgba(255,255,255,0.2)'}
         >
-          Get Archeo → from $9
+          Try 5 free → Upgrade anytime
         </a>
 
         <p style={{ fontSize: 12, color: 'var(--tx-muted)', letterSpacing: '-0.005em', fontFamily: 'var(--font-sans)' }}>
-          ↳ Name your price at checkout. Single-user lifetime license.
+          ↳ Free tier with 5 archives. Pro unlimited from $9. Single-user lifetime license.
         </p>
 
       </div>

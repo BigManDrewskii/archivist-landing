@@ -67,9 +67,9 @@ export default function Hero() {
               }}
               id="hero-heading"
             >
-              The page you saved
+              Archive the web.
               <br />
-              is still there tomorrow.
+              Feed it to AI.
             </h1>
 
             <p
@@ -85,9 +85,8 @@ export default function Hero() {
               }}
             >
               A Chrome extension that archives any web page as a pixel-perfect
-              offline copy. Captures HTML, CSS, fonts, images, video, audio,
-              and scripts. Choose ZIP, single HTML, or MHTML. No account.
-              No cloud.
+              offline copy. Clean HTML ready for LLM analysis, RAG pipelines,
+              and design system extraction. 5 free archives to try it out.
             </p>
 
             {/* CTA buttons */}
@@ -126,7 +125,7 @@ export default function Hero() {
                 onFocus={(e) => (e.currentTarget.style.boxShadow = '0 0 0 2px var(--amber-a25)')}
                 onBlur={(e) => (e.currentTarget.style.boxShadow = 'none')}
               >
-                Name your price → from $9
+                Try 5 free → Upgrade anytime
               </a>
               <a
                 href="#what-it-captures"
@@ -176,7 +175,7 @@ export default function Hero() {
                 textShadow: '0 1px 6px rgba(0,0,0,0.4)',
               }}
             >
-              Name your price. Minimum $9. One license, one person, forever.
+              Free tier with 5 archives. Pro unlimited — from $9, one license, forever.
             </p>
 
             {/* Stat pills */}

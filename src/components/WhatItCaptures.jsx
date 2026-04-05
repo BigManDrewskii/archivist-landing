@@ -95,7 +95,7 @@ const features = [
   {
     icon: 'design',
     title: 'Design System export',
-    desc: 'Extract colors, typography, and spacing as JSON, Markdown, or Tailwind config.',
+    desc: 'Extract colors, typography, and spacing as JSON, Markdown, or Tailwind config. Perfect for competitive research and feeding to LLMs.',
     span: false,
   },
   {
