@@ -1,4 +1,5 @@
-const GUMROAD_URL = 'https://nasus1.gumroad.com/l/archeo'
+const URL_FREE = 'https://nasus1.gumroad.com/l/archeo'
+const URL_PRO  = 'https://nasus1.gumroad.com/l/archeo-pro'
 
 export default function FooterCTA() {
   return (
@@ -70,7 +71,7 @@ export default function FooterCTA() {
         </p>
 
         <a
-          href={GUMROAD_URL}
+          href={URL_PRO}
           target="_blank"
           rel="noopener noreferrer"
           style={{
@@ -103,11 +104,11 @@ export default function FooterCTA() {
           onFocus={e => e.currentTarget.style.boxShadow = '0 0 0 2px var(--amber-a25), 0 4px 16px rgba(0,0,0,0.3)'}
           onBlur={e => e.currentTarget.style.boxShadow = '0 4px 16px rgba(0,0,0,0.3), 0 0 0 1px rgba(255,255,255,0.05), inset 0 1px 0 rgba(255,255,255,0.2)'}
         >
-          Try 5 free → Upgrade anytime
+          Get Pro → from $9
         </a>
 
         <p style={{ fontSize: 12, color: 'var(--tx-muted)', letterSpacing: '-0.005em', fontFamily: 'var(--font-sans)' }}>
-          ↳ Free tier with 5 archives. Pro unlimited from $9. Single-user lifetime license.
+          Or <a href={URL_FREE} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--amber)', textDecoration: 'none' }}>start free</a> with 5 archives — no credit card needed.
         </p>
 
       </div>

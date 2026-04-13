@@ -1,8 +1,8 @@
 const steps = [
   {
     num: '1',
-    title: 'Click the icon',
-    desc: 'Open the popup from your toolbar, right-click any page, or press Alt+Shift+A. Choose ZIP, single HTML, or MHTML.',
+    title: 'Install',
+    desc: 'Download and unzip. Open chrome://extensions, enable Developer Mode, click Load unpacked, select the folder. Takes 30 seconds — no account, no sign-in.',
   },
   {
     num: '2',
@@ -23,7 +23,7 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section style={{ paddingTop: 80, paddingBottom: 80, borderTop: '1px solid var(--glass-border)' }}>
+    <section id="how-it-works" style={{ paddingTop: 80, paddingBottom: 80, borderTop: '1px solid var(--glass-border)' }}>
       <div style={{ maxWidth: 840, margin: '0 auto', padding: '0 24px' }}>
 
         {/* Steps as timeline */}

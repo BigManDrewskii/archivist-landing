@@ -1,7 +1,8 @@
 import { useEffect, useRef } from 'react'
 import ExtensionMockup from './ExtensionMockup'
 
-const GUMROAD_URL = 'https://nasus1.gumroad.com/l/archeo'
+const URL_FREE = 'https://nasus1.gumroad.com/l/archeo'
+const URL_PRO  = 'https://nasus1.gumroad.com/l/archeo-pro'
 
 export default function Hero() {
   const heroRef = useRef(null)
@@ -84,9 +85,7 @@ export default function Hero() {
                 textShadow: '0 1px 8px rgba(0,0,0,0.5)',
               }}
             >
-              A Chrome extension that archives any web page as a pixel-perfect
-              offline copy. Clean HTML ready for LLM analysis, RAG pipelines,
-              and design system extraction. 5 free archives to try it out.
+              Archive any web page as a pixel-perfect offline copy. Clean HTML ready for LLM analysis, RAG pipelines, and design system extraction. Start free.
             </p>
 
             {/* CTA buttons */}
@@ -100,7 +99,7 @@ export default function Hero() {
               }}
             >
               <a
-                href={GUMROAD_URL}
+                href={URL_FREE}
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
@@ -125,10 +124,12 @@ export default function Hero() {
                 onFocus={(e) => (e.currentTarget.style.boxShadow = '0 0 0 2px var(--amber-a25)')}
                 onBlur={(e) => (e.currentTarget.style.boxShadow = 'none')}
               >
-                Try 5 free → Upgrade anytime
+                Try free — 5 archives
               </a>
               <a
-                href="#what-it-captures"
+                href={URL_PRO}
+                target="_blank"
+                rel="noopener noreferrer"
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
@@ -160,7 +161,7 @@ export default function Hero() {
                 onFocus={(e) => (e.currentTarget.style.boxShadow = '0 0 0 2px var(--amber-a25)')}
                 onBlur={(e) => (e.currentTarget.style.boxShadow = 'none')}
               >
-                See what it captures →
+                Get Pro → from $9
               </a>
             </div>
 
@@ -175,7 +176,7 @@ export default function Hero() {
                 textShadow: '0 1px 6px rgba(0,0,0,0.4)',
               }}
             >
-              Free tier with 5 archives. Pro unlimited — from $9, one license, forever.
+              Free tier: 5 full-quality archives. Pro: unlimited, from $9, lifetime license.
             </p>
 
             {/* Stat pills */}

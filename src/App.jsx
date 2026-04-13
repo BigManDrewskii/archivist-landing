@@ -4,6 +4,7 @@ import VideoBanner from './components/VideoBanner'
 import HowItWorks from './components/HowItWorks'
 import WhatItCaptures from './components/WhatItCaptures'
 import Formats from './components/Formats'
+import Pricing from './components/Pricing'
 import FooterCTA from './components/FooterCTA'
 import Footer from './components/Footer'
 
@@ -17,6 +18,7 @@ export default function App() {
         <HowItWorks />
         <WhatItCaptures />
         <Formats />
+        <Pricing />
         <FooterCTA />
       </main>
       <Footer />

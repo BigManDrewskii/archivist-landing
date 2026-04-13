@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react'
 
-const GUMROAD_URL = 'https://nasus1.gumroad.com/l/archeo'
+const URL_FREE = 'https://nasus1.gumroad.com/l/archeo'
+const URL_PRO  = 'https://nasus1.gumroad.com/l/archeo-pro'
 
 const navLinks = [
   { label: 'How it works', href: '#how-it-works' },
   { label: 'What it captures', href: '#what-it-captures' },
   { label: 'Formats', href: '#formats' },
+  { label: 'Pricing', href: '#pricing' },
 ]
 
 export default function Nav() {
@@ -124,7 +126,7 @@ export default function Nav() {
 
       {/* CTA */}
       <a
-        href={GUMROAD_URL}
+        href={URL_PRO}
         target="_blank"
         rel="noopener noreferrer"
         className="nav-cta"
@@ -162,7 +164,7 @@ export default function Nav() {
           e.currentTarget.style.boxShadow = 'none'
         }}
       >
-        Get it — from $9
+        Get Pro — from $9
       </a>
     </nav>
   )

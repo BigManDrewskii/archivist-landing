@@ -22,7 +22,7 @@ const formats = [
 
 export default function Formats() {
   return (
-    <section style={{ paddingTop: 96, paddingBottom: 96, borderTop: '1px solid var(--glass-border)' }}>
+    <section id="formats" style={{ paddingTop: 96, paddingBottom: 96, borderTop: '1px solid var(--glass-border)' }}>
       <div style={{ maxWidth: 960, margin: '0 auto', padding: '0 24px' }}>
 
         {/* Split layout: recommended large, two alternatives stacked */}
