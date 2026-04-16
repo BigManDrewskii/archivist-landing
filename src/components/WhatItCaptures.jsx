@@ -108,12 +108,12 @@ const features = [
 
 export default function WhatItCaptures() {
   return (
-    <section id="what-it-captures" style={{ paddingTop: 96, paddingBottom: 96, borderTop: '1px solid var(--glass-border)' }}>
+    <section id="what-it-captures" className="section-pad" style={{ paddingTop: 96, paddingBottom: 96, borderTop: '1px solid var(--glass-border)' }}>
       <div style={{ maxWidth: 960, margin: '0 auto', padding: '0 24px' }}>
 
         {/* Bento-style grid with varied spans */}
         <div
-          className="feature-cards"
+          className="feature-cards bento-grid"
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(3, 1fr)',

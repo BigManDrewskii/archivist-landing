@@ -22,11 +22,11 @@ const formats = [
 
 export default function Formats() {
   return (
-    <section id="formats" style={{ paddingTop: 96, paddingBottom: 96, borderTop: '1px solid var(--glass-border)' }}>
+    <section id="formats" className="section-pad format-section" style={{ paddingTop: 96, paddingBottom: 96, borderTop: '1px solid var(--glass-border)' }}>
       <div style={{ maxWidth: 960, margin: '0 auto', padding: '0 24px' }}>
 
         {/* Split layout: recommended large, two alternatives stacked */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, alignItems: 'stretch' }}>
+        <div className="format-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, alignItems: 'stretch' }}>
 
           {/* Left: Recommended format (large) */}
           <div style={{

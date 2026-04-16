@@ -3,7 +3,7 @@ const URL_PRO  = 'https://nasus1.gumroad.com/l/archeo-pro'
 
 export default function FooterCTA() {
   return (
-    <section style={{
+    <section className="section-pad" style={{
       paddingTop: 120,
       paddingBottom: 120,
       borderTop: '1px solid var(--glass-border)',

@@ -9,7 +9,7 @@ const CheckIcon = () => (
 
 export default function Pricing() {
   return (
-    <section id="pricing" style={{ paddingTop: 96, paddingBottom: 96, borderTop: '1px solid var(--glass-border)' }}>
+    <section id="pricing" className="section-pad" style={{ paddingTop: 96, paddingBottom: 96, borderTop: '1px solid var(--glass-border)' }}>
       <div style={{ maxWidth: 960, margin: '0 auto', padding: '0 24px' }}>
 
         {/* Section label */}
@@ -47,7 +47,7 @@ export default function Pricing() {
         </h2>
 
         {/* Two-column pricing cards */}
-        <div style={{
+        <div className="pricing-grid" style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
           gap: 24,

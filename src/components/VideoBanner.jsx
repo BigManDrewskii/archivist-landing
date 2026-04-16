@@ -68,7 +68,7 @@ export default function VideoBanner() {
         >
           <video
             ref={videoRef}
-            src="/archeo-banner-video.mp4"
+            src="/archeo-banner-video.webm"
             loop
             muted
             playsInline

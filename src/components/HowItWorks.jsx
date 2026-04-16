@@ -23,7 +23,7 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" style={{ paddingTop: 80, paddingBottom: 80, borderTop: '1px solid var(--glass-border)' }}>
+    <section id="how-it-works" className="section-pad" style={{ paddingTop: 80, paddingBottom: 80, borderTop: '1px solid var(--glass-border)' }}>
       <div style={{ maxWidth: 840, margin: '0 auto', padding: '0 24px' }}>
 
         {/* Steps as timeline */}
